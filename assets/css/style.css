@@ -49,8 +49,8 @@ body {
     linear-gradient(165deg, #0d1117 0%, #1a1f2e 40%, #0f1419 100%);
 }
 
-/* Menu bar */
-.menubar {
+/* Top bar */
+.site-header {
   position: fixed;
   top: 0;
   left: 0;
@@ -58,68 +58,70 @@ body {
   z-index: 100;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  height: 28px;
-  padding: 0 16px;
-  font-size: 13px;
-  background: rgba(30, 30, 30, 0.72);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-.menubar-left {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.apple-logo {
+  gap: 24px;
+  height: 52px;
+  padding: 0 20px;
   font-size: 14px;
-  opacity: 0.9;
+  background: rgba(12, 14, 18, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.menubar-nav {
-  display: flex;
-  gap: 4px;
-}
-
-.menubar-nav a {
+.brand {
   color: var(--text);
   text-decoration: none;
-  padding: 2px 10px;
-  border-radius: 4px;
-  transition: background 0.15s;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: -0.02em;
+  margin-right: auto;
 }
 
-.menubar-nav a:hover,
-.menubar-nav a.active {
-  background: rgba(255, 255, 255, 0.12);
-}
-
-.menubar-right {
+.site-nav {
   display: flex;
-  align-items: center;
-  gap: 12px;
-  color: var(--text-muted);
-  font-size: 12px;
+  gap: 20px;
 }
 
-.menubar-status {
-  color: var(--dot-green);
-  font-size: 8px;
+.site-nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 4px 0;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.site-nav a:hover,
+.site-nav a.active {
+  color: var(--text);
+  border-bottom-color: var(--accent);
+}
+
+.nav-github {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 13px;
+  padding: 6px 12px;
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+
+.nav-github:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.18);
 }
 
 /* Main layout */
 main {
-  padding: 48px 24px 120px;
+  padding: 72px 24px 48px;
   max-width: 1100px;
   margin: 0 auto;
 }
 
 /* Hero */
 .hero {
-  padding-top: 60px;
+  padding-top: 32px;
   text-align: center;
 }
 
@@ -168,10 +170,8 @@ main {
 }
 
 .hero-eyebrow {
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--accent);
+  font-size: 14px;
+  color: var(--text-muted);
   margin: 0 0 8px;
 }
 
@@ -319,11 +319,6 @@ main {
   transform: translateY(-2px);
 }
 
-.feature-icon {
-  font-size: 2rem;
-  margin-bottom: 12px;
-}
-
 .feature-card h3 {
   margin: 0 0 8px;
   font-size: 1.15rem;
@@ -379,18 +374,6 @@ main {
   background: linear-gradient(135deg, #dfe6e9 0%, #b2bec3 100%);
 }
 
-.mock-dock {
-  position: absolute;
-  bottom: 12px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60%;
-  height: 36px;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 14px;
-  backdrop-filter: blur(12px);
-}
-
 /* Download */
 .download-panel {
   display: grid;
@@ -422,13 +405,6 @@ main {
   gap: 12px;
 }
 
-.download-note {
-  font-size: 12px;
-  color: var(--text-muted);
-  margin: 8px 0 0;
-  max-width: 36ch;
-}
-
 .install-steps {
   background: rgba(0, 0, 0, 0.25);
   border-radius: var(--radius);
@@ -449,61 +425,48 @@ main {
 /* Footer */
 .site-footer {
   text-align: center;
-  padding: 40px 24px 100px;
+  padding: 48px 24px 56px;
   font-size: 13px;
   color: var(--text-muted);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  margin-top: 40px;
 }
 
-.site-footer a {
-  color: var(--accent);
-}
-
-/* Dock */
-.dock {
-  position: fixed;
-  bottom: 12px;
-  left: 50%;
-  transform: translateX(-50%);
+.footer-nav {
   display: flex;
-  gap: 4px;
-  padding: 6px 10px;
-  background: rgba(40, 40, 45, 0.65);
-  backdrop-filter: blur(24px) saturate(180%);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 18px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-  z-index: 100;
-}
-
-.dock-item {
-  display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
-  width: 52px;
-  height: 52px;
-  border-radius: 12px;
+  gap: 20px;
+  margin-bottom: 16px;
+}
+
+.footer-nav a {
+  color: var(--text-muted);
   text-decoration: none;
-  font-size: 28px;
-  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-.dock-item:hover {
-  transform: scale(1.2) translateY(-8px);
+.footer-nav a:hover {
+  color: var(--text);
 }
 
-.dock-item.active {
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.dock-item span {
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+.footer-legal {
+  margin: 0;
+  font-size: 12px;
+  opacity: 0.8;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .menubar-nav a:not(.active):not(:first-of-type) {
+  .site-nav {
     display: none;
+  }
+
+  .site-header {
+    justify-content: space-between;
+  }
+
+  .brand {
+    margin-right: 0;
   }
 
   .gallery {
@@ -529,8 +492,7 @@ main {
   }
 
   .btn:hover,
-  .feature-card:hover,
-  .dock-item:hover {
+  .feature-card:hover {
     transform: none;
   }
 }

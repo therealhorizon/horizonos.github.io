@@ -2,37 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <script>
-    (function () {
-      var repo = "horizonos.github.io";
-      var base = location.pathname.indexOf("/" + repo) === 0 ? "/" + repo + "/" : "/";
-      document.write('<base href="' + base + '">');
-    })();
-  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="HorizonOS — a custom Linux distribution with the polish and feel of macOS.">
-  <title>HorizonOS — Linux, reimagined</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌅</text></svg>">
+  <meta name="description" content="HorizonOS — Debian-based Linux with a macOS-style desktop.">
+  <title>HorizonOS</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>H</text></svg>">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
   <div class="wallpaper" aria-hidden="true"></div>
 
-  <header class="menubar">
-    <div class="menubar-left">
-      <span class="apple-logo" aria-hidden="true">◉</span>
-      <nav class="menubar-nav" aria-label="Main">
-        <a href="#" class="active">HorizonOS</a>
-        <a href="#features">Features</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#download">Download</a>
-        <a href="https://github.com" id="github-link" target="_blank" rel="noopener noreferrer">GitHub</a>
-      </nav>
-    </div>
-    <div class="menubar-right">
-      <span class="menubar-clock" id="clock"></span>
-      <span class="menubar-status" title="System status">●</span>
-    </div>
+  <header class="site-header">
+    <a href="#home" class="brand">HorizonOS</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="#features">Features</a>
+      <a href="#gallery">Screenshots</a>
+      <a href="#download">Download</a>
+    </nav>
+    <a href="https://github.com/therealhorizon/horizonos.github.io" class="nav-github" id="github-link" target="_blank" rel="noopener noreferrer">GitHub</a>
   </header>
 
   <main>
@@ -42,136 +28,124 @@
           <span class="dot red"></span>
           <span class="dot yellow"></span>
           <span class="dot green"></span>
-          <span class="window-title">Welcome to HorizonOS</span>
+          <span class="window-title">HorizonOS</span>
         </div>
         <div class="window-body">
-          <p class="hero-eyebrow">Custom Linux · macOS-inspired desktop</p>
+          <p class="hero-eyebrow">Debian-based distro</p>
           <h1>HorizonOS</h1>
           <p class="hero-tagline">
-            The power and freedom of Linux, wrapped in a calm, familiar interface.
-            Built for creators who want macOS aesthetics without leaving open source behind.
+            A Linux desktop that borrows the layout and polish from macOS—built on Debian,
+            so you get solid packages and hardware support without the Apple tax.
           </p>
           <div class="hero-actions">
             <a href="#download" class="btn btn-primary">Download ISO</a>
-            <a href="#features" class="btn btn-secondary">Explore features</a>
+            <a href="#features" class="btn btn-secondary">See what's included</a>
           </div>
         </div>
       </div>
       <div class="hero-specs">
         <div class="spec-card">
           <span class="spec-label">Base</span>
-          <span class="spec-value">Arch Linux</span>
+          <span class="spec-value">Debian</span>
         </div>
         <div class="spec-card">
           <span class="spec-label">Desktop</span>
           <span class="spec-value">KDE Plasma</span>
         </div>
         <div class="spec-card">
-          <span class="spec-label">Theme</span>
-          <span class="spec-value">Horizon UI</span>
+          <span class="spec-label">Look</span>
+          <span class="spec-value">Horizon theme</span>
         </div>
       </div>
     </section>
 
     <section class="section" id="features">
-      <h2 class="section-title">Why HorizonOS</h2>
-      <p class="section-subtitle">Thoughtful defaults, native performance, and a desktop that stays out of your way.</p>
+      <h2 class="section-title">What's in the box</h2>
+      <p class="section-subtitle">Stuff we set up so you don't have to fight the defaults on day one.</p>
       <div class="feature-grid">
         <article class="feature-card">
-          <div class="feature-icon">🪟</div>
-          <h3>macOS-style chrome</h3>
-          <p>Traffic lights, unified title bars, and subtle translucency across windows and panels.</p>
+          <h3>Window chrome</h3>
+          <p>Close/minimize/maximize on the left, clean title bars, rounded corners where it makes sense.</p>
         </article>
         <article class="feature-card">
-          <div class="feature-icon">⚡</div>
-          <h3>Fast &amp; lightweight</h3>
-          <p>Arch underneath means rolling updates, AUR access, and a system you control end to end.</p>
+          <h3>Debian underneath</h3>
+          <p>Install software with apt from Debian repos. Familiar, stable base—no rolling-release surprises.</p>
         </article>
         <article class="feature-card">
-          <div class="feature-icon">🔒</div>
-          <h3>Privacy first</h3>
-          <p>No telemetry baked in. You choose what runs — HorizonOS ships lean and transparent.</p>
+          <h3>No phone-home stuff</h3>
+          <p>We don't ship analytics or adware. What's on the ISO is what's documented.</p>
         </article>
         <article class="feature-card">
-          <div class="feature-icon">🎨</div>
-          <h3>Horizon theme pack</h3>
-          <p>Icons, cursors, sounds, and GTK/Qt styling tuned for a cohesive Sonoma-like look.</p>
+          <h3>Horizon theme</h3>
+          <p>Icons, GTK/Qt tweaks, wallpaper, and sounds aimed at one consistent desktop look.</p>
         </article>
         <article class="feature-card">
-          <div class="feature-icon">📦</div>
-          <h3>Dev-ready</h3>
-          <p>Containers, Git, Node, Python, and common build tools available out of the box.</p>
+          <h3>Dev tools included</h3>
+          <p>Git, build essentials, and common runtimes—enough to clone a repo and get going.</p>
         </article>
         <article class="feature-card">
-          <div class="feature-icon">🌐</div>
           <h3>Open source</h3>
-          <p>Scripts, configs, and branding live on GitHub. Fork it, remix it, ship your own spin.</p>
+          <p>Configs and scripts are on GitHub. Change them, fork them, ship your own variant.</p>
         </article>
       </div>
     </section>
 
     <section class="section section-alt" id="gallery">
-      <h2 class="section-title">Desktop preview</h2>
-      <p class="section-subtitle">A glimpse of the Horizon desktop experience.</p>
+      <h2 class="section-title">Screenshots</h2>
+      <p class="section-subtitle">Placeholder previews until you drop in real captures.</p>
       <div class="gallery">
         <figure class="gallery-item gallery-large">
-          <div class="mock-desktop mock-1">
-            <div class="mock-dock"></div>
-          </div>
-          <figcaption>Dock &amp; wallpaper</figcaption>
+          <div class="mock-desktop mock-1"></div>
+          <figcaption>Desktop</figcaption>
         </figure>
         <figure class="gallery-item">
           <div class="mock-desktop mock-2"></div>
-          <figcaption>Control Center</figcaption>
+          <figcaption>Settings</figcaption>
         </figure>
         <figure class="gallery-item">
           <div class="mock-desktop mock-3"></div>
-          <figcaption>Finder-style files</figcaption>
+          <figcaption>Files</figcaption>
         </figure>
       </div>
     </section>
 
     <section class="section" id="download">
-      <h2 class="section-title">Get HorizonOS</h2>
-      <p class="section-subtitle">Flash the ISO to a USB drive and boot. Works on most x86_64 hardware from the last decade.</p>
+      <h2 class="section-title">Download</h2>
+      <p class="section-subtitle">x86_64 ISO. Flash to USB, boot, run the installer.</p>
       <div class="download-panel">
         <div class="download-info">
           <h3>HorizonOS 1.0</h3>
           <ul>
             <li><strong>Architecture:</strong> x86_64</li>
-            <li><strong>Size:</strong> ~2.4 GB (approx.)</li>
-            <li><strong>License:</strong> GPL &amp; assorted OSS</li>
+            <li><strong>Base:</strong> Debian</li>
+            <li><strong>License:</strong> GPL and other OSS licenses (see repo)</li>
           </ul>
         </div>
         <div class="download-actions">
           <a href="#" class="btn btn-primary btn-large" id="download-btn">Download ISO</a>
-          <a href="#" class="btn btn-ghost" id="checksum-btn">View checksums</a>
-          <p class="download-note">Replace the links above with your release assets when published on GitHub Releases.</p>
+          <a href="#" class="btn btn-ghost" id="checksum-btn">Checksums</a>
         </div>
       </div>
       <div class="install-steps">
-        <h3>Quick install</h3>
+        <h3>Install steps</h3>
         <ol>
-          <li>Download the ISO and verify the SHA256 checksum.</li>
-          <li>Write to USB with Balena Etcher, Rufus, or <code>dd</code>.</li>
-          <li>Boot from USB, follow the Horizon installer, reboot.</li>
+          <li>Download the ISO and check the SHA256 hash.</li>
+          <li>Write it to a USB stick (Etcher, Rufus, or <code>dd</code>).</li>
+          <li>Boot from USB and follow the installer.</li>
         </ol>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p>HorizonOS is not affiliated with Apple Inc. macOS is a trademark of Apple Inc.</p>
-    <p>Made with Linux · <a href="https://github.com" id="footer-github" target="_blank" rel="noopener noreferrer">Source on GitHub</a></p>
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="#features">Features</a>
+      <a href="#gallery">Screenshots</a>
+      <a href="#download">Download</a>
+      <a href="https://github.com/therealhorizon/horizonos.github.io" id="footer-github" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </nav>
+    <p class="footer-legal">Not affiliated with Apple. macOS is a trademark of Apple Inc.</p>
   </footer>
-
-  <nav class="dock" aria-label="Quick links">
-    <a href="#home" class="dock-item active" title="Home"><span>🏠</span></a>
-    <a href="#features" class="dock-item" title="Features"><span>✨</span></a>
-    <a href="#gallery" class="dock-item" title="Gallery"><span>🖼️</span></a>
-    <a href="#download" class="dock-item" title="Download"><span>⬇️</span></a>
-    <a href="https://github.com" class="dock-item" id="dock-github" title="GitHub" target="_blank" rel="noopener noreferrer"><span>🐙</span></a>
-  </nav>
 
   <script src="assets/js/config.js"></script>
   <script src="assets/js/main.js"></script>
