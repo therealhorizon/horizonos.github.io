@@ -1,1 +1,1 @@
-window.HORIZON_GITHUB_REPO = "therealhorizon/horizonos.github.io";
+window.HORIZON_GITHUB_REPO = "therealhorizon/therealhorizon.github.io";
