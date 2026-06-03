@@ -2,6 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <script>
+    (function () {
+      var repo = "horizonos.github.io";
+      var base = location.pathname.indexOf("/" + repo) === 0 ? "/" + repo + "/" : "/";
+      document.write('<base href="' + base + '">');
+    })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="HorizonOS — a custom Linux distribution with the polish and feel of macOS.">
   <title>HorizonOS — Linux, reimagined</title>
