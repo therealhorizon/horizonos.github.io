@@ -8,7 +8,7 @@ Static landing page for **HorizonOS** — a custom Linux distribution with a mac
 2. Open **Settings → Pages**.
 3. Under **Build and deployment**, set **Source** to **Deploy from a branch**.
 4. Choose branch `main` (or `master`) and folder **`/ (root)`**.
-5. Save. Your site will be at `https://<user>.github.io/<repo>/` (project site) or `https://<user>.github.io/` (user/org site repo).
+5. Save. This repo publishes at **https://therealhorizon.github.io/** (user Pages site).
 
 ## Customize
 
